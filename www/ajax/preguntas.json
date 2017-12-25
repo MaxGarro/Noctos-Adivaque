@@ -1,0 +1,456 @@
+{
+"preguntas": 
+    [
+        {
+            "pregunta" : "Señal de tránsito",
+            "respuestas": 
+                [
+					{"texto":"Prevención"},
+					{"texto":"Señal"},
+					{"texto":"Automóvil"},
+					{"texto":"Cartel"}
+				]
+        },{
+            "pregunta" : "Señal preventiva",
+            "respuestas": 
+                [
+					{"texto":"Amarillo"},
+					{"texto":"Prevenir"},
+					{"texto":"Peligro"},
+					{"texto":"Automóvil"}
+				]
+        },{
+            "pregunta" : "Cruce de Escolares",
+            "respuestas": 
+                [
+					{"texto":"Escuela"},
+					{"texto":"Niños"},
+					{"texto":"Cruzar"},
+					{"texto":"Calle"}
+				]
+        },{
+            "pregunta" : "Curva cerrada",
+            "respuestas": 
+                [
+					{"texto":"Indicar"},
+					{"texto":"Curvas continuas"},
+					{"texto":"Curva cerrada"},
+					{"texto":"Señal"}
+				]
+        },{
+            "pregunta" : "Paso peatonal",
+            "respuestas": 
+                [
+					{"texto":"Caminar "},
+					{"texto":"Personas"},
+					{"texto":"Calle"},
+					{"texto":"Senda"}
+				]
+        },{
+            "pregunta" : "Ceda el paso",
+            "respuestas": 
+                [
+					{"texto":"Conductor"},
+					{"texto":"Reducir"},
+					{"texto":"Velocidad"},
+					{"texto":"Ceder paso"}
+				]
+        },{
+            "pregunta" : "Inspección",
+            "respuestas": 
+                [
+					{"texto":"Presencia"},
+					{"texto":"Inspector"},
+					{"texto":"Tránsito"},
+					{"texto":"Revisión"}
+				]
+        },{
+            "pregunta" : "Velocidad máxima",
+            "respuestas": 
+                [
+					{"texto":"Límite de velocidad"},
+					{"texto":"Máxima"},
+					{"texto":"Circular"},
+					{"texto":"Indicación"}
+				]
+        },{
+            "pregunta" : "No rebasar",
+            "respuestas": 
+                [
+					{"texto":"Prohíbe"},
+					{"texto":"Señal"},
+					{"texto":"Pasar"},
+					{"texto":"Auto"}
+				]
+        },{
+            "pregunta" : "Prohibido estacionar",
+            "respuestas": 
+                [
+					{"texto":"Indica"},
+					{"texto":"Prohibido"},
+					{"texto":"Estacionarse"},
+					{"texto":"Automóvil"}
+				]
+        },{
+            "pregunta" : "Señal de servicio turístico",
+            "respuestas": 
+                [
+					{"texto":"Indica"},
+					{"texto":"Atractivo turístico"},
+					{"texto":"Asistencia "},
+					{"texto":"Emergencia"}
+				]
+        },{
+            "pregunta" : "Señales de destino",
+            "respuestas": 
+                [
+					{"texto":"Indica"},
+					{"texto":"Nombre"},
+					{"texto":"Lugar/ destino"},
+					{"texto":"Camino/ ruta"}
+				]
+        },{
+            "pregunta" : "Señal de identificación",
+            "respuestas": 
+                [
+					{"texto":"Indicar"},
+					{"texto":"Calle"},
+					{"texto":"Kilometraje"},
+					{"texto":"Nombre"}
+				]
+        },{
+            "pregunta" : "Señal restrictiva",
+            "respuestas": 
+                [
+					{"texto":"Blanco y rojo"},
+					{"texto":"Prohibición"},
+					{"texto":"Limitación"},
+					{"texto":"Auto"}
+				]
+        },{
+            "pregunta" : "Alto",
+            "respuestas": 
+                [
+					{"texto":"Detener"},
+					{"texto":"Vehículo"},
+					{"texto":"Señal"},
+					{"texto":"Cartel"}
+				]
+        },{
+            "pregunta" : "Señales informativas",
+            "respuestas": 
+                [
+					{"texto":"Guiar"},
+					{"texto":"Símbolos"},
+					{"texto":"Calle/ ruta"},
+					{"texto":"Nombre"}
+				]
+        },{
+            "pregunta" : "Altura limitada o máxima",
+            "respuestas": 
+                [
+					{"texto":"Señal"},
+					{"texto":"Vehículo de carga"},
+					{"texto":"Camión "},
+					{"texto":"Indicación"}
+				]
+        },{
+            "pregunta" : "Badén",
+            "respuestas": 
+                [
+					{"texto":"Desagote de agua"},
+					{"texto":"Ruta"},
+					{"texto":"Automóvil"},
+					{"texto":"Zona de lluvia "}
+				]
+        },{
+            "pregunta" : "Camino dividido",
+            "respuestas": 
+                [
+					{"texto":"Indicar"},
+					{"texto":"División"},
+					{"texto":"Camino"},
+					{"texto":"Dos senderos"}
+				]
+        },{
+            "pregunta" : "Camino sinuoso",
+            "respuestas": 
+                [
+					{"texto":"Curva"},
+					{"texto":"Serpenteantes"},
+					{"texto":"Ondulantes"},
+					{"texto":"Camino montañoso"}
+				]
+        },{
+            "pregunta" : "Ambulancia",
+            "respuestas": 
+                [
+					{"texto":"Hospital"},
+					{"texto":"Estacionamiento"},
+					{"texto":"Entrada "},
+					{"texto":"Salida"}
+				]
+        },{
+            "pregunta" : "Ancho limitado",
+            "respuestas": 
+                [
+					{"texto":"Señal"},
+					{"texto":"Ancho"},
+					{"texto":"Vehículo"},
+					{"texto":"Truncado"}
+				]
+        },{
+            "pregunta" : "Animales sueltos",
+            "respuestas": 
+                [
+					{"texto":"Alerta"},
+					{"texto":"Animales"},
+					{"texto":"Vía"},
+					{"texto":"Suelto"}
+				]
+        },{
+            "pregunta" : "Bifurcación en Y",
+            "respuestas": 
+                [
+					{"texto":"Cambio de dirección"},
+					{"texto":"Apertura"},
+					{"texto":"Ruta"},
+					{"texto":"Camino"}
+				]
+        },{
+            "pregunta" : "Bifurcación en T:",
+            "respuestas": 
+                [
+					{"texto":"Cambio de dirección"},
+					{"texto":"Apertura"},
+					{"texto":"Ruta"},
+					{"texto":"Camino"}
+				]
+        },{
+            "pregunta" : "Camino resbaladizo",
+            "respuestas": 
+                [
+					{"texto":"Camino "},
+					{"texto":"Peligro"},
+					{"texto":"Tierra"},
+					{"texto":"Zanja"}
+				]
+        },{
+            "pregunta" : "Ciclistas en vía",
+            "respuestas": 
+                [
+					{"texto":"Senda "},
+					{"texto":"Exclusiva "},
+					{"texto":"Bicicleta"},
+					{"texto":"Ciclovía"}
+				]
+        },{
+            "pregunta" : "Corredor aéreo",
+            "respuestas": 
+                [
+					{"texto":"Ruta obligatoria"},
+					{"texto":"Avión"},
+					{"texto":"Vuelo"},
+					{"texto":"Zona liberada"}
+				]
+        },{
+            "pregunta" : "Cruce de caminos",
+            "respuestas": 
+                [
+					{"texto":"Caminos"},
+					{"texto":"Cruzan"},
+					{"texto":"Alerta"},
+					{"texto":"Precaución"}
+				]
+        },{
+            "pregunta" : "Curva",
+            "respuestas": 
+                [
+					{"texto":"Aproximación"},
+					{"texto":"Curva "},
+					{"texto":"Indica "},
+					{"texto":"Ruta"}
+				]
+        },{
+            "pregunta" : "Curva en S",
+            "respuestas": 
+                [
+					{"texto":"Curva"},
+					{"texto":"Contra curva"},
+					{"texto":"Ruta "},
+					{"texto":"Aproximación"}
+				]
+        },{
+            "pregunta" : "Cruce de trenes",
+            "respuestas": 
+                [
+					{"texto":"Señal"},
+					{"texto":"Ferroviaria"},
+					{"texto":"Cruce"},
+					{"texto":"Vía de tren"}
+				]
+        },{
+            "pregunta" : "Zona de derrumbe",
+            "respuestas": 
+                [
+					{"texto":"Zona montañosa"},
+					{"texto":"Acumulación "},
+					{"texto":"Derrumbe"},
+					{"texto":"Gran cantidad"}
+				]
+        },{
+            "pregunta" : "Exclusivo discapacitados",
+            "respuestas": 
+                [
+					{"texto":"Circulación "},
+					{"texto":"Presencia "},
+					{"texto":"Persona "},
+					{"texto":"Limitación motriz"}
+				]
+        },{
+            "pregunta" : "Inicio de doble vía",
+            "respuestas": 
+                [
+					{"texto":"Indica"},
+					{"texto":"Doble circulación"},
+					{"texto":"Vía"},
+					{"texto":"Ida y vuelta"}
+				]
+        },{
+            "pregunta" : "Loma de burro",
+            "respuestas": 
+                [
+					{"texto":"Camino "},
+					{"texto":"Ruta"},
+					{"texto":"Baja velocidad "},
+					{"texto":"Esquinas"}
+				]
+        },{
+            "pregunta" : "Sexualidad",
+            "respuestas": 
+                [
+					{"texto":"Placer"},
+					{"texto":"Actividad"},
+					{"texto":"Sexual"},
+					{"texto":"Comportamiento"}
+				]
+        },{
+            "pregunta" : "Coito",
+            "respuestas": 
+                [
+					{"texto":"Acto "},
+					{"texto":"Sexual"},
+					{"texto":"Cópula"},
+					{"texto":"Introducción"}
+				]
+        },{
+            "pregunta" : "Transmisión sexual",
+            "respuestas": 
+                [
+					{"texto":"Transmitir"},
+					{"texto":"Enfermedad"},
+					{"texto":"Preservativo"},
+					{"texto":"Gonorrea/ sífilis/ VIH"}
+				]
+        },{
+            "pregunta" : "Método anticonceptivo",
+            "respuestas": 
+                [
+					{"texto":"Cuidado"},
+					{"texto":"Acto sexual"},
+					{"texto":"Preservativo"},
+					{"texto":"Pastillas anticonceptivas"}
+				]
+        },{
+            "pregunta" : "Ovarios",
+            "respuestas": 
+                [
+					{"texto":"Órgano"},
+					{"texto":"Femenino"},
+					{"texto":"Interior"},
+					{"texto":"Sexual "}
+				]
+        },{
+            "pregunta" : "Pastilla del día después",
+            "respuestas": 
+                [
+					{"texto":"Método"},
+					{"texto":"Anticonceptivo"},
+					{"texto":"Emergencia"},
+					{"texto":"Mujer"}
+				]
+        },{
+            "pregunta" : "Preservativo",
+            "respuestas": 
+                [
+					{"texto":"Condón"},
+					{"texto":"Método "},
+					{"texto":"Anticonceptivos"},
+					{"texto":"Hombre"}
+				]
+        },{
+            "pregunta" : "VIH",
+            "respuestas": 
+                [
+					{"texto":"Enfermedad"},
+					{"texto":"Transmisión sexual"},
+					{"texto":"Virus"},
+					{"texto":"Sida"}
+				]
+        },{
+            "pregunta" : "Himen",
+            "respuestas": 
+                [
+					{"texto":"Virginidad"},
+					{"texto":"Tejido"},
+					{"texto":"Vagina"},
+					{"texto":"Coito"}
+				]
+        },{
+            "pregunta" : "Placenta",
+            "respuestas": 
+                [
+					{"texto":"Intercambio de oxígeno"},
+					{"texto":"Útero"},
+					{"texto":"Sustancia nutritivas"},
+					{"texto":"Madre y feto"}
+				]
+        },{
+            "pregunta" : "Adicción",
+            "respuestas": 
+                [
+					{"texto":"Dependencia"},
+					{"texto":"Sustancia"},
+					{"texto":"Actividad"},
+					{"texto":"Relación"}
+				]
+        },{
+            "pregunta" : "Anfetaminas",
+            "respuestas": 
+                [
+					{"texto":"Sustancia"},
+					{"texto":"Estimulante"},
+					{"texto":"Sistema nervioso"},
+					{"texto":"Resistencia física"}
+				]
+        },{
+            "pregunta" : "Sobredosis",
+            "respuestas": 
+                [
+					{"texto":"Exceso"},
+					{"texto":"Medicamentos"},
+					{"texto":"Droga"},
+					{"texto":"Intoxicación"}
+				]
+        },{
+            "pregunta" : "Cirrosis",
+            "respuestas": 
+                [
+					{"texto":"Enfermedad"},
+					{"texto":"Hígado "},
+					{"texto":"Exceso"},
+					{"texto":"Bebida alcoholica "}
+				]
+		}
+      ]
+}

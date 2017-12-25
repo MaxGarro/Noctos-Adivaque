@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/font.css" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <title>Noctos Adivina Que</title>
+    </head>
+    <body>
+        <div class="appNoctos">
+            <img src="img/noctoslogo.png" alt="" style="width: 100%">
+            <div id="Countdown">Tiempo: 01 : 30</div>
+            <div id="pregunta">
+
+            </div>
+
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script> 
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+
+        <script type="text/javascript">
+            app.initialize();
+            jQuery(document).ready(function($) {
+                //Tiempo del juego
+                var minutosJuego = 1.5;
+                var tiempo = minutosJuego * 60 * 1000;
+
+                //capa de Preguntas
+                var capa = '#pregunta';
+                var jsonPreguntas = Array();
+               
+                //Cantidad de Preguntas a Hacer
+                var cantPreguntas = 5;
+                
+                //Numeros de Preguntas aleatorias
+                var numPregunta = new Array();
+                
+                //Puntaje
+                var Puntaje = 0;
+                var PuntajeCorrecto = 3;
+
+                //Estado para el Timer
+                var estadoTrivia = false;
+
+            /*-------------------------------------*/
+                function TimerOn(tiempo, counter){
+                    var horaActual = new Date().getTime();
+                        horaFin    = horaActual + tiempo;
+                    
+                        Intervalos = setInterval(function() {
+                            //fecha actual
+                            horaActual = new Date().getTime();
+                            var tiempoRestante   = horaFin - horaActual;
+
+                            var minutos = Math.floor((tiempoRestante % (1000 * 60 * 60)) / (1000 * 60));
+                            var segundos = Math.floor((tiempoRestante % (1000 * 60)) / 1000);
+                            minutos = (String(minutos).length ==  1) ? "0" + String(minutos) : minutos;
+                            segundos = (String(segundos).length ==  1) ? "0" + String(segundos) : segundos;
+
+                            $(counter).html('Tiempo: ' + minutos + ' : ' + segundos);
+
+                            if (tiempoRestante < 10000){
+                                $(counter).addClass('rojo');
+                            }
+                            if(estadoTrivia == false){
+                                $(counter).html('Tiempo: 01 : 30').removeClass('rojo');
+                                clearInterval(Intervalos);
+                            }
+                            if (tiempoRestante <= 0) {
+                                $(counter).html('Tiempo: 01 : 30').removeClass('rojo');
+                                finTrivia('0');
+                                clearInterval(Intervalos);
+                            }
+                    }, 1000);
+                }
+
+
+                function TimerClear(){
+                    $(counter).html('Tiempo: 01 : 30').removeClass('rojo');
+                    //clearInterval(Intervalos);
+                }
+            /*--------------------------------------*/    
+                //Inicializar
+                function iniciarTrivia(){
+                    Puntaje = 0;
+                    numPregunta = new Array();
+                    
+                    $(capa).html('');
+                    //HTML DE PREGUNTA
+                    //<h1 class="celeste">PREGUNTA_ <label id="preguntaNum" class="rosa">1</label></h1>
+                    var preguntaNum = $('<h1/>',{
+                        'class' : 'celeste titular',
+                        'text'  : 'BIENVENIDO A '
+                    }).append($('<label/>',{'class':'rosa','text' : 'ADIVINOCTOS'})).appendTo(capa);
+                    
+                    //<h2 id=preguntaTexto>TEXTO</h2>
+                    var preguntaTexto = $('<h2/>',{
+                        'text'  : '¿Comenzamos?'
+                    }).appendTo(capa);
+                    var respueta = $('<button/>',{
+                        'class'          : 'verde',
+                        'id'             : 'IniciarTrivia',
+                        'text'           : 'COMENZAR'
+                    }).appendTo(capa); 
+                    function aleatorio(min, max) {
+                        var num = Math.floor(Math.random()*(max-min+1))+min;
+                        for(var i = 0; i < numPregunta.length; i++) {
+                            if (numPregunta[i] == num) {
+
+                                  aleatorio(min, max);
+                                break;
+                            }
+                        }
+                        if(i == numPregunta.length){
+                            numPregunta.push(num);
+                        }
+                    }
+                     $.getJSON( "ajax/preguntas.json", function( data ) {
+                        
+                            //Cantidad de Preguntas en el JSON
+                            var TotalPreguntas = Object.keys(data.preguntas).length - 1;
+                            //Conseguir Preguntas Aleatorias
+                            for (i = 0; i < cantPreguntas; i++) { 
+                                aleatorio(0,TotalPreguntas);
+                            }
+                            jsonPreguntas = data.preguntas;
+                        //$(capa).html(data.preguntas[numPregunta[0]].pregunta + TotalPreguntas);
+                       // $(capa).html(jsonPreguntas[1].pregunta);
+                    })
+                }
+                //Crear Pregunta
+                function crearPregunta(num, data){
+                    $(capa).html('');
+                    //HTML DE PREGUNTA
+                    //<h1 class="celeste">PREGUNTA_ <label id="preguntaNum" class="rosa">1</label></h1>
+                    var preguntaNum = $('<h1/>',{
+                        'class' : 'celeste',
+                        'data-siguiente' : num+1,
+                        'text'  : 'ADIVINA LA PALABRA: '
+                    }).append($('<label/>',{
+                                    'id':'preguntaNum',
+                                    'class':'rosa',
+                                    'data-valor' :num+1,
+                                    'text' : num+1})).appendTo(capa);
+                    
+                    //<h2 id=preguntaTexto>TEXTO</h2>
+                    var preguntaTexto = $('<h2/>',{
+                        'id'    : 'preguntaTexto',
+                        'text'  : data.pregunta
+                    }).appendTo(capa);
+                    $.each(data.respuestas, function(key,  valor) {
+                        //<button type="button" class="celeste" data-correcto="0">Leer QR</button>
+                        var respueta = $('<button/>',{
+                            'class'          : 'celeste',
+                            'text'           : valor.texto,
+                            'disabled'       : 'disabled'
+                        }).appendTo(capa); 
+                    });
+                    $('<button/>',{
+                            'class'          : 'verde preguntaTrivia',
+                            'text'           : 'CORRECTO', 
+                            'style'         : 'margin-top: 30px'
+                        }).appendTo(capa); 
+                    $('<button/>',{
+                            'class'          : 'rojo preguntaTrivia',
+                            'text'           : 'PASO'
+                        }).appendTo(capa); 
+                }
+                //Finalizar
+                function finTrivia(){
+                    $(capa).html('');
+                    //HTML DE PREGUNTA
+                    //<h1 class="celeste">PREGUNTA_ <label id="preguntaNum" class="rosa">1</label></h1>
+                    $('<h1/>',{
+                        'class' : 'celeste titular',
+                        'text'  : 'JUEGO TERMINADO TU PUNTAJE ES  '
+                    }).appendTo(capa);
+                    $('<h1/>',{
+                        'class' : 'rosa puntaje',
+                        'text'  : Puntaje + ' de ' +cantPreguntas
+                    }).appendTo(capa);   
+
+
+                    if (tiempo == 0){
+                        $('<h2/>',{'text'  : 'Tu tiempo se agoto, Lo sentimos!'}).appendTo(capa);
+                    }else if (Puntaje >= PuntajeCorrecto){
+                        $('<h2/>',{'text'  : 'Bien Hecho!'}).appendTo(capa);
+                    }else{
+                        $('<h2/>',{'text'  : 'Lo sentimos, debes adivinar '+ PuntajeCorrecto +' correctamente!'}).appendTo(capa);
+                    }
+
+
+
+                    $('<button/>',{
+                        'class'          : 'rosa',
+                        'id'             : 'FinalizarEncuesta',
+                        'text'           : 'Reiniciar'
+                    }).appendTo(capa); 
+                }
+                //Comenzar Trivia
+                iniciarTrivia();
+                //Iniciando Trivia
+                $(document).on('click', '#IniciarTrivia', function(event) {
+                    estadoTrivia = true;
+                    TimerOn(tiempo, '#Countdown');
+                    crearPregunta(0, jsonPreguntas[numPregunta[0]]);
+                });
+                //Finalizar Trivia
+                $(document).on('click', '#FinalizarEncuesta', function(event) {
+                    iniciarTrivia();
+                });
+
+                //Siguiente Pregunta
+                $(document).on('click', '.preguntaTrivia.verde, .preguntaTrivia.rojo', function(event) {
+                    $('button').prop("disabled",true);
+
+                    if($(this).hasClass('verde')){
+                        $('button.celeste').addClass('verde');
+                        Puntaje++;
+                    }else{
+                        $('button.celeste').addClass('rojo');
+                    }
+
+                    $('.preguntaTrivia[data-correcto="1"]').addClass('verde');
+                    if($('#preguntaNum').data('valor') == cantPreguntas){
+                        setTimeout(function(){
+                             estadoTrivia = false;
+                             finTrivia();
+                        }, 2000);    
+                    }else{
+                        setTimeout(function(){
+                            crearPregunta(
+                                $('h1').data('siguiente'), 
+                                jsonPreguntas[numPregunta[$('h1').data('siguiente')]]
+                                );
+                        }, 2000);
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
